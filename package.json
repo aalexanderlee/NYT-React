@@ -1,0 +1,20 @@
+{
+  "name": "NYT-React",
+  "version": "1.0.0",
+  "description": "NYT-React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalexanderlee/NYT-React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aalexanderlee/NYT-React/issues"
+  },
+  "homepage": "https://github.com/aalexanderlee/NYT-React#readme"
+}
