@@ -8,22 +8,33 @@ var Article = require('./models/Article.js');
 //var request = require('request');
 
 mongoose.Promise = Promise;
-
 var PORT = process.env.PORT || 3000;
 
 var app = express();
+var router = express.Router();
+require("./app/config/routes")(router);
 
 app.use(logger("dev"));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: true
 }));
-
+app.use(bodyParser.text());
+app.use(bodyParser.json({type:"application/vnd.api+json"}));
 app.use(express.static("public"));
 
 //var routes = require("./app/config/routes.js");
 //app.use("/", routes);
 //mongoose.connect("mongodb://heroku_gnzk5747:4d2121nhgnfbdl1pfirsdepk9n@ds125262.mlab.com:25262/heroku_gnzk5747");
-mongoose.connect('mongodb://localhost/article');
+
+if (process.env.MONGODB_URI) {
+  
+}
+
+mongoose.connect('mongodb://localhost/nytreact');
+
+
+
 var db = mongoose.connection;
 
 // db.on("error", function(error) {
