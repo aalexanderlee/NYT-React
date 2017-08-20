@@ -15,7 +15,6 @@ var Results = React.createClass({
       		this.props.saveArticle(result.headline.main, result.pub_date, result.web_url);
     },
 
-    // components will 
     componentWillReceiveProps: function(nextProps) {
         var that = this;
         var myResults = nextProps.results.map(function(search, i) {
@@ -27,5 +26,22 @@ var Results = React.createClass({
         this.setState({results: myResults});
     },
 
+    notifyMe: function() {
+      var notification = new Notification("Saving article was a successful process.")
+    },
 
-})
+    render: function() {
+      return(
+    			<div className="panel panel-success">
+    				<div className="panel-heading">
+    					<h3 className="panel-title text-center"><strong>Results</strong></h3>
+    				</div>
+    				<div className="panel-body">
+    					{this.state.results}
+    				</div>
+    			</div>
+    	);
+    }
+});
+
+module.exports = Results;
