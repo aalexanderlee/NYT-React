@@ -10,9 +10,35 @@ var helpers = {
                   title + "&begin_date=" + beginYear + "0101" + "&end_date=" + endYear + "1231";
 
     return axios.get(queryURL).then(function(response){
+      var newResults = [];
+      var fullResults = response.data.response.docs;
+      var count = 0;
 
-      
+      if (fullResults[0]) {
+        for (var i = 0; i < fullResults.length; i++) {
+
+          if(count>4) {
+            return newResults;
+          }
+          if(fullResults[count].headline.main && fullResults[count].pub_date && fullResults[count].web_url) {
+            newResults.push(fullResults[count]);
+            count++;
+          }
+
+        }
+        return newResults;
+      } else {
+        return("");
+      }
     })
+  },
 
+  postArticle: function(title, date, url) {
+    axios.post('/api/saved', {title: title, date: date, url: url})
+    .then(function(result) {
+      return(result);
+    })
   }
 }
+
+module.exports = helpers;
