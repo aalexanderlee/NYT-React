@@ -18,3 +18,18 @@ router.get('/api/saved', function(req, res) {
     }
   });
 });
+
+// post route that will create new entries from saved mongo db content
+router.post('/api/saved', function(req, res) {
+  // create new entry using Article model
+  var newArticle = new Article(req.body);
+  // save these entries to mongo db
+  newArticle.save(function(err, doc) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.send(doc);
+    }
+  });
+});
