@@ -33,3 +33,15 @@ router.post('/api/saved', function(req, res) {
     }
   });
 });
+
+router.delete('/api/saved/:id', function(req, res) {
+  console.log(req.params.id);
+  Article.findByIdAndRemove(req.params.id, function(err, todo) {
+    if(err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.send(todo);
+    }
+  });
+});
