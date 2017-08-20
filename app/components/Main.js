@@ -49,6 +49,49 @@ var Main = React.createClass({
     this.getArticle();
   },
 
+  getArticle: function() {
+    axios.get('/api/saved')
+    .then(function(response) {
+      this.setState({
+        savedArticles: response.data
+      });
+    }.bind(this));
+  },
+
+  componentDidUpdate: function(prevProps, prevState){
+		if(prevState.title != this.state.title ||
+		   prevState.startYear != this.state.startYear ||
+		   prevState.endYear !=this.state.endYear) {
+
+			helpers.runQuery(this.state.title, this.state.startYear, this.state.endYear)
+				.then(function(data){
+					console.log(data);
+					if (data != this.state.results)
+					{
+						this.setState({
+							results: data
+						})
+					}
+				}.bind(this))
+		}
+	},
+
+  componentDidMount: function(){
+		axios.get('/api/saved')
+			.then(function(response) {
+				this.setState({
+					savedArticles: response.data
+				});
+			}.bind(this));
+	},
+
+  render: function() {
+    return(
+      
+    )
+  }
+
+
 
   }
 })
