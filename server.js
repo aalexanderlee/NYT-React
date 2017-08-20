@@ -1,10 +1,10 @@
 // Dependencies
-const express = require('express');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
-const mongoose = require('mongoose');
+var express = require('express');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var mongoose = require('mongoose');
 
-const app = express();
+var app = express();
 var PORT = process.env.PORT || 3000;
 
 var http = require('http').Server(app);
@@ -47,6 +47,8 @@ io.on('connection', function(socket) {
 
 // importing the use of routes and controllers
 var Article = require('./models/Article.js');
+
+//var router = require('./controllers/controller.js');
 var router = require("./app/config/routes")(router);
 
 // app.use(bodyParser.text());

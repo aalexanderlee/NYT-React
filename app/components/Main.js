@@ -87,11 +87,45 @@ var Main = React.createClass({
 
   render: function() {
     return(
-      
-    )
+      <div className="container">
+	        <div className="row">
+	          <div className="jumbotron text-center" style={{'backgroundImage': 'url(./assets/img/background.jpg)', 'backgroundRepeat': 'no-repeat', 'backgroundPosition': 'center', 'backgroundSize': '100% 100%', 'backgroundAttachment': 'fixed'}}>
+	            <h2 className="text-center"style={{'color': 'white', 'fontWeight': 'bold', 'fontSize': '48px'}}>New York Times Article Search</h2>
+	            <p className="text-center" style={{'color': 'white'}}>
+	              <em>Search for an article topic and save it!</em>
+	            </p>
+	            <hr />
+	            <p>
+	            <Link to="/"><button className="btn btn-primary btn-lg">Search Articles</button></Link>
+            	<Link to="/Saved"><button className="btn btn-danger btn-lg">Saved Articles</button></Link>
+            	</p>
+	          </div>
+	          </div>
+
+		         <div className="row">
+
+				     	<Route exact path="/" render={(props) => (
+				     	  <Form {...props}
+				     	   searchTerm={this.searchTerm}
+				     	   results={this.state.results}
+				     	   saveArticle={this.saveArticle}
+				     	   getArticle={this.getArticle}
+				     	   />
+			          	)} />
+
+			          	<Route exact path="/saved" render={(props) => (
+				            <Saved {...props}
+				           	  savedArticles={this.state.savedArticles}
+				              getArticle={this.getArticle}
+				              deleteArticle={this.deleteArticle}
+				            />
+				          )} />
+			     </div>
+	      </div>
+
+    );
   }
 
+});
 
-
-  }
-})
+module.exports = Main;
