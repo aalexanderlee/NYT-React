@@ -49,8 +49,6 @@ io.on('connection', function(socket) {
 var Article = require('./models/Article.js');
 var router = require("./app/config/routes")(router);
 
-
-
 // app.use(bodyParser.text());
 // app.use(bodyParser.json({type:"application/vnd.api+json"}));
 
