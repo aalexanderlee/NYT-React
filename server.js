@@ -47,9 +47,8 @@ io.on('connection', function(socket) {
 
 // importing the use of routes and controllers
 var Article = require('./models/Article.js');
-
-//var router = require('./controllers/controller.js');
-var router = require("./app/config/routes")(router);
+var router = require('./controllers/controller.js');
+// var router = require("./app/config/routes")(router);
 
 // app.use(bodyParser.text());
 // app.use(bodyParser.json({type:"application/vnd.api+json"}));
