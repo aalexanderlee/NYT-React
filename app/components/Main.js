@@ -1,7 +1,8 @@
 var axios = require("axios");
 var React = require("react");
+// use link components from react router to navigate without full page reloads
 var router = require("react-router-dom");
-var Link = router.link;
+var Link = router.Link;
 var Route = router.Route;
 
 var Form = require("./children/Form");

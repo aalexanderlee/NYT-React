@@ -39,11 +39,11 @@ var Form = React.createClass({
 							<form>
 								<div className="form-group">
 									<h4 className=""><strong>Search Term</strong></h4>
-									<input type="text" className="form-control text-center" id="title" placeholder="What topic would you like to search?" onChange= {this.handleChange} required/>
+									<input type="text" className="form-control text-center" id="title" placeholder="Enter A Topic" onChange= {this.handleChange} required/>
 									<br />
 
 									<h4 className=""><strong>Start Year</strong></h4>
-									<input type="text" className="form-control text-center" id="startYear" placeholder="2007" onChange= {this.handleChange} required/>
+									<input type="text" className="form-control text-center" id="startYear" placeholder="2000" onChange= {this.handleChange} required/>
 									<br />
 
 									<h4 className=""><strong>End Year</strong></h4>
