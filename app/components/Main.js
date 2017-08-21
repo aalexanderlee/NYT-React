@@ -16,7 +16,7 @@ var Main = React.createClass({
     return {
       title: "",
       startYear: "",
-      endYear: "".
+      endYear: "",
       results: [],
       savedArticles: []
     };
@@ -45,7 +45,6 @@ var Main = React.createClass({
       });
       return response;
     }.bind(this));
-
     this.getArticle();
   },
 
@@ -89,7 +88,7 @@ var Main = React.createClass({
     return(
       <div className="container">
 	        <div className="row">
-	          <div className="jumbotron text-center" style={{'backgroundImage': 'url(./assets/img/np_1.jpg)', 'backgroundRepeat': 'no-repeat', 'backgroundPosition': 'center', 'backgroundSize': '100% 100%', 'backgroundAttachment': 'fixed'}}>
+	          <div className="jumbotron text-center" style={{'backgroundImage': 'url(./assets/images/np_1.jpg)', 'backgroundRepeat': 'no-repeat', 'backgroundPosition': 'center', 'backgroundSize': '100% 100%', 'backgroundAttachment': 'fixed'}}>
 	            <h2 className="text-center"style={{'color': 'white', 'fontWeight': 'bold', 'fontSize': '48px'}}>New York Times Article Search</h2>
 	            <p className="text-center" style={{'color': 'white'}}>
 	              <em>Search for an article topic and save it!</em>

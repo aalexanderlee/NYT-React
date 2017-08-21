@@ -4,7 +4,7 @@ var Saved = React.createClass({
 
   getInitialState: function() {
     return {
-      savedArticles: [];
+      savedArticles: []
     }
   },
 
@@ -44,4 +44,4 @@ var Saved = React.createClass({
 
 });
 
-module.export = Saved;
+module.exports = Saved;
