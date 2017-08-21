@@ -8,7 +8,7 @@ var Saved = React.createClass({
     }
   },
 
-  clickToDelete: function() {
+  clickToDelete: function(result) {
     this.props.deleteArticle(result);
   },
 
